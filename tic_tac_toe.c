@@ -19,7 +19,7 @@ void checker(int input){
       }
     }
     else { 
-            if((whole_steup[2][input-5] == '#')||(whole_steup[2][input-5] == '*')){
+            if((whole_steup[2][input-6] == '#')||(whole_steup[2][input-6] == '*')){
         printf("Error");
         exit(0);
       }
@@ -166,6 +166,7 @@ int main(){
         }
         printf("\n");
     }
+    winning();
 //Printed till the second user input
       printf("Enter the input as per the value assign ");
      scanf("%d",&input_user2);
@@ -206,6 +207,7 @@ int main(){
         }
         printf("\n");
     }
+    winning();
 //Printed till the second user input
       printf("Enter the input as per the value assign ");
      scanf("%d",&input_user2);
@@ -227,6 +229,18 @@ int main(){
     }
    winning();
   //Completed till the second user second time
+   printf("Enter the input as per the value assign ");
+     scanf("%d",&input_user);
+     checker(input_user);
+    if(input_user<=2){
+        whole_steup[0][input_user] = '*';
+    }
+    else if((input_user>2)&&(input_user<=5)){
+        whole_steup[1][input_user-3] = '*';
+    }
+    else  whole_steup[2][input_user-6] = '*';
+            winning();
+    //Completed till the third input by the first user
   //Completed
   printf("No one won the game, its a tie one");
     return(0);
